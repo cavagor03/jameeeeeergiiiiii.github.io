@@ -1,0 +1,257 @@
+/* Подключение шрифтов */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800&display=swap');
+
+:root {
+    --bg-color: #fcfaf6;       /* Мягкий крем / Слоновая кость */
+    --text-main: #2b2c2c;      /* Глубокий графитовый */
+    --accent: #ff5a1f;         /* Огненно-оранжевый (костер) */
+    --accent-muted: #e6f0fa;   /* Мягкий фон для карточек */
+    --border-color: #e0dbd3;   /* Тонкие природные рамки */
+    --font-headers: 'Montserrat', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- ЧЕРДАК (Header) --- */
+header {
+    background-color: var(--bg-color);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: var(--font-headers);
+    font-weight: 800;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-main);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+nav a:hover, nav a.active {
+    color: var(--accent);
+}
+
+/* --- ОСНОВНОЙ КОНТЕНТ --- */
+main {
+    flex: 1;
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--font-headers);
+    margin-bottom: 20px;
+}
+
+h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; }
+h2 { font-size: 1.8rem; border-bottom: 2px solid var(--accent); display: inline-block; padding-bottom: 5px; margin-bottom: 30px; }
+
+/* Баннер на главной */
+.hero {
+    padding: 60px 0;
+    max-width: 800px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.btn {
+    display: inline-block;
+    background-color: var(--text-main);
+    color: #fff;
+    padding: 12px 30px;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: var(--accent);
+}
+
+/* Сетка карточек */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.card {
+    border: 1px solid var(--border-color);
+    padding: 30px;
+    border-radius: 6px;
+    background-color: rgba(255,255,255,0.5);
+}
+
+.card h3 {
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.badge {
+    background-color: #fff;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border-radius: 20px;
+    margin-bottom: 15px;
+}
+
+.badge.emergency {
+    border-color: #d93838;
+    color: #d93838;
+}
+
+/* Таблицы */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+th {
+    font-family: var(--font-headers);
+    font-weight: 700;
+    background-color: rgba(0,0,0,0.02);
+}
+
+/* Большие инфографические цифры */
+.stat-number {
+    font-family: var(--font-headers);
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    line-height: 1;
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* --- ПОДВАЛ (Footer) --- */
+footer {
+    background-color: var(--text-main);
+    color: #a0a5a5;
+    padding: 40px 20px;
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.footer-section h4 {
+    color: #fff;
+    font-family: var(--font-headers);
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section a {
+    color: #a0a5a5;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 30px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid #404242;
+    text-align: center;
+    font-size: 0.8rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .header-container, .footer-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+}
